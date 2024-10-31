@@ -2,17 +2,24 @@
 using namespace std;
 
 int main() {
-    int n;
-    cin >> n;
-    int i = 1;
-    int sub = n;
-    while (sub > 0)
-    {
-        sub = sub / i;
-        i++;
+	int n;
+	cin >> n;
+	int i = 1;
+	int sub = n;
+	while (true)
+	{
+		sub = sub / i;
 
-    }
-    cout << i - 1;
+		if (sub <= 1)
+		{
+			break;
+		}
 
-    return 0;
+		// cout << sub << " ";
+		i++;
+
+	}
+	cout << i;
+
+	return 0;
 }
