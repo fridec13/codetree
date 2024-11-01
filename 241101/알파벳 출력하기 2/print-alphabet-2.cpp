@@ -15,7 +15,7 @@ int main() {
         {
             cout << alpha << " ";
             alpha++;
-            if (alpha == 'Z')
+            if (alpha == 'Z'+1)
             {
                 alpha = 'A';
             }
