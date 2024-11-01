@@ -8,7 +8,7 @@ int main() {
 	int n, m;
 	cin >> n >> m;
 	int square = n + m - 2;
-	for (int k = 0; k < square; k++)
+	for (int k = 0; k <= square; k++)
 	{
 		for (int j = 0; j <= k; j++)
 		{
@@ -19,7 +19,6 @@ int main() {
 			
 		}
 	}
-	arr[n - 1][m - 1] = num;
 
 	for (int i = 0; i < n; i++)
 	{
