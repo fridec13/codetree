@@ -19,8 +19,8 @@ int main() {
     if ( b1 < 0 ) b1 = b1 * (-1);
     if ( c1 < 0 ) c1 = c1 * (-1);
 
-    if ( a1 > b1 && a1 > c1) cout << a1;
-    else if (b1 > a1 && b1 > c1 ) cout << b1;
-    else cout << c1;
+    if ( a1 >= b1 && a1 >= c1) cout << a1;
+    else if (b1 >= a1 && b1 >= c1 ) cout << b1;
+    else if (c1 >= a1 && c1 >= b1 ) cout << c1;
     return 0;
 }
