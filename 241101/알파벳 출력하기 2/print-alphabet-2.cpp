@@ -15,6 +15,10 @@ int main() {
         {
             cout << alpha << " ";
             alpha++;
+            if (alpha == 'Z')
+            {
+                alpha = 'A';
+            }
         }
         cout << "\n";
     }
