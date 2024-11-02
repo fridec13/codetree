@@ -7,7 +7,7 @@ int main() {
     cin >> a;
     for (int i = a.length()-1; i >= 0; i--)
     {
-        if (a[i] %2 == 1)
+        if (i %2 == 1)
         {
             cout << a[i];
         }
