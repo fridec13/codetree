@@ -15,6 +15,7 @@ int main() {
         if (a == b)
         {
             flag = 1;
+            break;
         }
     }
     if (flag == 0) cout << -1;
