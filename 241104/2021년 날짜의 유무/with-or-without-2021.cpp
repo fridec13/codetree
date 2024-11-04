@@ -7,7 +7,7 @@ int year2021[13] = {
 
 bool IsExist(int m, int d)
 {
-    if ( 1 <= d <= year2021[m]) return true;
+    if ( 1 <= d && d <= year2021[m]) return true;
     return false;
 }
 
