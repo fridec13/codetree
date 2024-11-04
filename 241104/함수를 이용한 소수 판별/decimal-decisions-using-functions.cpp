@@ -21,7 +21,7 @@ int main() {
     cin >> a >> b;
     for (int i = a; i <= b; i++)
     {
-        if (IsPrime(i))
+        if (i != 1 && IsPrime(i))
         {
             sum += i;
         }
