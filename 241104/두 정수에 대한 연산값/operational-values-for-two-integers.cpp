@@ -8,7 +8,7 @@ void func(int &a, int &b)
         a = a + 25;
         b = b * 2;
     }
-    else (b > a)
+    else
     {
         b = b + 25;
         a = a * 2;
