@@ -14,6 +14,8 @@ void PrintHello(int n)
 
 int main() {
     // 여기에 코드를 작성해주세요.
-    PrintHello(4);
+    int n;
+    cin >> n;
+    PrintHello(n);
     return 0;
 }
