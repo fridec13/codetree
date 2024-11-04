@@ -3,7 +3,6 @@ using namespace std;
 
 int arr[100];
 int n;
-int maxval = - 9999999;
 
 
 
@@ -14,8 +13,8 @@ int F(int n)
 		return arr[0];
 	}
 
-	if (F(n-1) < arr[n]) return arr[n];
-	else return F(n-1);
+	if (F(n - 1) <= arr[n]) return arr[n];
+	else return F(n - 1);
 }
 
 int main() {
