@@ -8,13 +8,14 @@ int n;
 
 int F(int n)
 {
-	if (n == 0)
+	if (n == 1)
 	{
 		return arr[0];
 	}
 
-	if (F(n - 1) <= arr[n]) return arr[n];
-	else return F(n - 1);
+	int premax = F(n-1);
+
+	return (premax <= arr[n-1]) ? arr[n-1] : premax;
 }
 
 int main() {
