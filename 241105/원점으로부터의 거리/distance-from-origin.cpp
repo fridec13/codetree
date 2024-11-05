@@ -12,6 +12,10 @@ struct Point
 
 bool cmp(Point a, Point b)
 {
+    if (abs(a.x - 0) + abs(a.y - 0) == abs(b.x - 0) + abs(b.y - 0) )
+    {
+        return a.num < b.num;
+    }
     return abs(a.x - 0) + abs(a.y - 0) < abs(b.x - 0) + abs(b.y - 0);
 }
 
