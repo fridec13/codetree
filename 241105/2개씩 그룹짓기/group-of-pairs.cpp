@@ -4,7 +4,6 @@ using namespace std;
 
 int arr[1000];
 int arr2[1000];
-int arr3[1000];
 
 int main() {
     // 여기에 코드를 작성해주세요.
@@ -24,7 +23,7 @@ int main() {
     for (int i = 0; i < 2*N; i++)
     {
         int val = arr[i] + arr2[i];
-        if (val >= maxval)
+        if (val > maxval)
         {
             maxval = val;
         }
