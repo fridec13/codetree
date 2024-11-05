@@ -11,7 +11,7 @@ int main() {
     cin >> input1 >> input2;
     sort( input1.begin(), input1.end());
     sort( input2.begin(), input2.end());
-    for (int i = 0; i < input1.length(); i++)
+    for (int i = 0; i < max(input1.length(), input2.length()); i++)
     {
         if (input1[i] != input2[i])
         {
