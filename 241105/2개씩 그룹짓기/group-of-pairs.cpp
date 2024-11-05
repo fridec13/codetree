@@ -2,8 +2,8 @@
 #include <algorithm>
 using namespace std;
 
-int arr[1000];
-int arr2[1000];
+int arr[1001];
+int arr2[1001];
 
 int main() {
     // 여기에 코드를 작성해주세요.
