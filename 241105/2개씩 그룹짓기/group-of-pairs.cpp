@@ -23,6 +23,7 @@ int main() {
     for (int i = 0; i < 2*N; i++)
     {
         int val = arr[i] + arr2[i];
+        if (val <= maxval) continue;
         if (val > maxval)
         {
             maxval = val;
