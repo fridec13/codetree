@@ -16,6 +16,8 @@ int main() {
         int flag = 0;
         int s, e;
         cin >> s >> e;
+        s = s+ 100;
+        e = e + 100;
         for (int j = s; j < e; j++)
         {
             arr[j]++;
