@@ -1,14 +1,14 @@
 #include <iostream>
 using namespace std;
 
-int arr[100000];
+int arr[200000];
 
 int main()
 {
 	int n;
 	cin >> n;
 
-	int cur = 50000;
+	int cur = 100000;
 
 	for (int i = 0; i < n; i++)
 	{
@@ -40,7 +40,7 @@ int main()
 	int cnt1 = 0;
 	int cnt2 = 0;
 
-	for (int i = 0; i < 100000; i++)
+	for (int i = 0; i < 200000; i++)
 	{
 		if (arr[i] == 1)
 		{
