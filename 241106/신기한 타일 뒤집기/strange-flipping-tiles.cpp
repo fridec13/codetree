@@ -5,17 +5,17 @@ using namespace std;
 
 // L == 흰색
 // R == 검정색
-int st[100];
-int ed[100];
+int st[1000];
+int ed[1000];
 
-int arr[200];
+int arr[2000];
 
 int main()
 {
 	int n;
 	cin >> n;
 	
-	int cur = 100;
+	int cur = 1000;
 
 	for (int i = 0; i < n; i++)
 	{
