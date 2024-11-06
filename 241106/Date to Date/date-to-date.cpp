@@ -5,8 +5,11 @@ int main() {
 
 	int m1, d1, m2, d2;
 	cin >> m1 >> d1 >> m2 >> d2;
+    int date[13] = {
+        0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+    };
 
-	int cntday = 0;
+	int cntday = 1;
 
 	int month = m1;
 	int day = d1;
@@ -21,11 +24,10 @@ int main() {
 			break;
 		}
 
-		if (day > 31)
+		if (day > date[month])
 		{
 			month++;
 			day = 1;
-			continue;
 		}
 
 		cntday++;
