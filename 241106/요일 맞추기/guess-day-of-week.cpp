@@ -17,22 +17,22 @@ int main() {
 	int cur_month = m1;
 	int cur_day = d1;
 	int cur_yoil = 1;
-
-	while (true)
+	if (cur_month > m2 || cur_month == m2 && cur_day > d2)
 	{
-
-		if (cur_month > m2 || cur_month == m2 && cur_day > d2)
+		while (true)
 		{
+			if (cur_yoil < 0)
+			{
+				cur_yoil = 6;
+			}
+
+
 			if (cur_month == m2 && cur_day == d2)
 			{
 				cout << yoil_list[cur_yoil];
 				break;
 			}
 
-			if (cur_yoil < 0)
-			{
-				cur_yoil = 6;
-			}
 
 			if (cur_day < 1)
 			{
@@ -44,18 +44,23 @@ int main() {
 			cur_day--;
 			cur_yoil--;
 		}
-		else
+	}
+	else
+	{
+		while (true)
 		{
+			if (cur_yoil > 6)
+			{
+				cur_yoil = 0;
+			}
+
 			if (cur_month == m2 && cur_day == d2)
 			{
 				cout << yoil_list[cur_yoil];
 				break;
 			}
 
-			if (cur_yoil > 6)
-			{
-				cur_yoil = 0;
-			}
+
 
 			if (cur_day > date[cur_month])
 			{
