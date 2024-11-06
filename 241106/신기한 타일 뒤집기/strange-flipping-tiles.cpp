@@ -3,11 +3,6 @@
 
 using namespace std;
 
-// L == 흰색
-// R == 검정색
-int st[1000];
-int ed[1000];
-
 int arr[2000];
 
 int main()
@@ -22,31 +17,28 @@ int main()
 		int dist;
 		char dir;
 		cin >> dist >> dir;
-
+		dist = dist -1;
 		if (dir == 'L')
 		{
-			st[i] = cur - dist;
-			ed[i] = cur;
-			cur = cur - dist;
+		for (int j = cur; j >= cur-dist; j--)
+		{
+			arr[j] = 1; // 흰색이 1;
+	
+			
 		}
+		cur = cur - dist;
+		}
+
 		else
 		{
-			st[i] = cur;
-			ed[i] = cur + dist;
-			cur = cur + dist;
-		}
-		for (int j = st[i]; j < ed[i]; j++)
-		{
-			if (dir == 'L')
-			{
-				arr[j] = 1; // 흰색이 1;
-			}
-			else
+			for (int j = cur; j<= cur+dist; j++)
 			{
 				arr[j] = 2; //검정이 2;
 			}
+			cur = cur + dist;
 		}
 	}
+	
 	int cnt1 = 0;
 	int cnt2 = 0;
 
