@@ -8,7 +8,7 @@ int main() {
     int cur = 11 * 24 * 60 + 11 * 60 + 11;
     int goal = a * 24 * 60 + b * 60 + c;
 
-    cout << goal - cur;
+    ( goal - cur < 0) ? cout << -1 : cout << goal - cur;
 
 
     return 0;
