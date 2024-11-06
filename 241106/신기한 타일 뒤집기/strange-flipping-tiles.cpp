@@ -14,7 +14,7 @@ int main()
 {
 	int n;
 	cin >> n;
-	
+
 	int cur = 1000;
 
 	for (int i = 0; i < n; i++)
@@ -50,7 +50,7 @@ int main()
 	int cnt1 = 0;
 	int cnt2 = 0;
 
-	for (int i = 0; i < 200; i++)
+	for (int i = 0; i < 2000; i++)
 	{
 		if (arr[i] == 1)
 		{
