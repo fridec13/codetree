@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-int arr[1000][3];
+int arr[10000][3];
 
 int main() {
 	// 여기에 코드를 작성해주세요.
 
-	int cur = 500; // 오프셋
+	int cur = 5000; // 오프셋
 	int n;
 	cin >> n;
 	for (int i = 0; i < n; i++)
@@ -53,7 +53,7 @@ int main() {
 	int cntb = 0;
 	int cntg = 0;
 
-	for (int i = 0; i < 1000; i++)
+	for (int i = 0; i < 10000; i++)
 	{
 		if (arr[i][2] == 1) cntw++;
 		else if (arr[i][2] == 2) cntb++;
