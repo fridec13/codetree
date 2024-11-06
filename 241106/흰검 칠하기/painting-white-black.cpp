@@ -2,131 +2,64 @@
 using namespace std;
 
 int arr[10000][3];
-//검정 / 흰색 / 회색
-//검정, 흰색
-// 회색은 1, 흰색은 2, 검정은 3;
-//0번 타일 부터 시작해서
 
 int main() {
 	// 여기에 코드를 작성해주세요.
+
+	int cur = 5000; // 오프셋
 	int n;
 	cin >> n;
-	int fredist = 5000;
-	char fredir = ' ';
-
 	for (int i = 0; i < n; i++)
 	{
 		int dist;
-		cin >> dist;
 		char dir;
+		cin >> dist;
 		cin >> dir;
-		if (dir == 'R')
+		dist = dist - 1;
+
+		if (dir == 'L')
 		{
-			if (dist == 1)
+			for (int i = cur; i >= cur - dist; i--)
 			{
-				arr[fredist][0]++;
-
-				if (arr[fredist][0] >= 2 && arr[fredist][1] >= 2)
+				arr[i][0]++;
+				arr[i][2] = 1;
+				if (arr[i][1] >= 2 && arr[i][0] >= 2)
 				{
-					arr[fredist][2] = 1;
-					continue;
-				}
-
-				arr[fredist][2] = 3;
-			}
-			else
-			{
-				for (int i = fredist; i < fredist + dist; i++)
-				{
-					arr[i][0]++;
-
-					if (arr[i][0] >= 2 && arr[i][1] >= 2)
-					{
-						arr[i][2] = 1;
-						continue;
-					}
 					arr[i][2] = 3;
-
-				}
-
-				if (dist > 1)
-				{
-					fredist = fredist + dist;
-					fredir = 'R';
 				}
 			}
+			cur = cur - dist;
 		}
-		else
+
+		else if (dir == 'R')
 		{
-			if (dist == 1)
+
+			for (int i = cur; i <= cur + dist; i++)
 			{
-				if (fredir == 'R')
+				arr[i][1]++;
+				arr[i][2] = 2;
+				if (arr[i][1] >= 2 && arr[i][0] >= 2)
 				{
-					fredist = fredist - 1;
-					arr[fredist][1]++;
-
-					if (arr[fredist][0] >= 2 && arr[fredist][1] >= 2)
-					{
-						arr[fredist][2] = 1;
-						continue;
-					}
-
-					arr[fredist][2] = 2;
-					continue;
+					arr[i][2] = 3;
 				}
-				arr[fredist][1]++;
-
-				if (arr[fredist][0] >= 2 && arr[fredist][1] >= 2)
-				{
-					arr[fredist][2] = 1;
-					continue;
-				}
-
-				arr[fredist][2] = 2;
-				continue;
+				
 			}
-
-			else
-			{
-				for (int i = fredist - dist; i < fredist; i++)
-				{
-					arr[i][1]++;
-
-					if (arr[i][0] >= 2 && arr[i][1] >= 2)
-					{
-						arr[i][2] = 1;
-						continue;
-					}
-
-					arr[i][2] = 2;
-				}
-
-				if (dist > 1)
-				{
-					fredist = fredist - dist;
-					fredir = 'L';
-				}
-			}
+			cur = cur + dist;
+			
 		}
 	}
-	int cntgrey = 0;
-	int cntwhite = 0;
-	int cntblack = 0;
+
+	int cntw = 0;
+	int cntb = 0;
+	int cntg = 0;
+
 	for (int i = 0; i < 10000; i++)
 	{
-		if (arr[i][2] == 1)
-		{
-			cntgrey++;
-		}
-		else if (arr[i][2] == 2)
-		{
-			cntwhite++;
-		}
-		else if (arr[i][2] == 3)
-		{
-			cntblack++;
-		}
+		if (arr[i][2] == 1) cntw++;
+		else if (arr[i][2] == 2) cntb++;
+		else if (arr[i][2] == 3) cntg++;
 	}
-	cout << cntwhite << " " << cntblack << " " << cntgrey;
+
+	cout << cntw << " " << cntb << " " << cntg;
 	return 0;
 }
