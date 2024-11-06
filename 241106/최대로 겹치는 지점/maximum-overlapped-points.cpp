@@ -21,7 +21,7 @@ int main() {
     int maxval = -9999;
     for (int i =0; i < 100; i++)
     {
-        maxval = max(maxval, arr[i])
+        maxval = max(maxval, arr[i]);
     }
 
     cout << maxval;
