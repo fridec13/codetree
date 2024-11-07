@@ -13,9 +13,9 @@ int main() {
     {
         int x1, y1, x2, y2;
         cin >> x1 >> y1 >> x2 >> y2;
-        for ( int i = y1; i < y2; i++)
+        for ( int i = y1+cur; i < y2+cur; i++)
         {
-            for ( int j = x1; j < x2; j++)
+            for ( int j = x1+cur; j < x2+cur; j++)
             {
                 arr[i][j] = 1;
                 cntexist++;
@@ -25,9 +25,9 @@ int main() {
     }
     int x1, y1, x2, y2;
     cin >> x1 >> y1 >> x2 >> y2;
-    for (int i = y1; i < y2; i++)
+    for (int i = y1+cur; i < y2+cur; i++)
     {
-        for (int j = x1; j < x2; j++)
+        for (int j = x1+cur; j < x2+cur; j++)
         {
             if (arr[i][j])
             {
