@@ -29,7 +29,7 @@ int main() {
 			arr2[j] = n;
 		}
 	}
-	for (int i = 1; i < 3; i++)
+	for (int i = 1; i < 1000; i++)
 	{
 		int space = arr2[i] - arr2[i - 1];
 		maxcnt = max(maxcnt, space);
