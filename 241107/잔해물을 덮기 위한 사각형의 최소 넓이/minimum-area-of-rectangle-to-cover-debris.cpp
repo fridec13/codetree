@@ -25,7 +25,7 @@ int main() {
 			arr[i][j] = 2;
 		}
 	}
-
+    int cnt = 0;
 	int min_y = 99999;
 	int	min_x = 99999;
 	int max_y = -99999;
@@ -40,10 +40,12 @@ int main() {
 				min_x = min(min_x, j);
 				max_y = max(max_y, i);
 				max_x = max(max_x, j);
+                cnt++;
 			}
 		}
 	}
-	cout << (max_x - min_x +1) * (max_y - min_y+1);
+    if (cnt) cout << (max_x - min_x +1) * (max_y - min_y+1);
+	else cout << 0;
 
 	return 0;
 }
