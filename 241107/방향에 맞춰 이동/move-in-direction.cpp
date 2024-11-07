@@ -18,29 +18,29 @@ int main() {
         cin >> dir >> dist;
         if ( dir == 'N')
         {
-            ny = cur_y + dy[3] * dist;
-            nx = cur_x + dx[3] * dist;
+            int ny = cur_y + dy[3] * dist;
+            int nx = cur_x + dx[3] * dist;
             cur_y = ny;
             cur_x = nx;
         }
         else if ( dir == 'E')
         {
-            ny = cur_y + dy[0] * dist;
-            nx = cur_x + dx[0] * dist;
+            int ny = cur_y + dy[0] * dist;
+            int nx = cur_x + dx[0] * dist;
             cur_y = ny;
             cur_x = nx;
         }
         else if ( dir == 'S')
         {
-            ny = cur_y + dy[1] * dist;
-            nx = cur_x + dx[1] * dist;
+            int ny = cur_y + dy[1] * dist;
+            int nx = cur_x + dx[1] * dist;
             cur_y = ny;
             cur_x = nx;
         }
         else if ( dir == 'W')
         {
-            ny = cur_y + dy[2] * dist;
-            nx = cur_x + dx[2] * dist;
+            int ny = cur_y + dy[2] * dist;
+            int nx = cur_x + dx[2] * dist;
             cur_y = ny;
             cur_x = nx;
         }
