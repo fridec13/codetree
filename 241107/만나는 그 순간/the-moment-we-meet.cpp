@@ -44,7 +44,7 @@ int main() {
 	}
 
 	t = 0;
-	cur = 50000;
+	cur = 100000;
 
 	for (int i = 0; i < M; i++)
 	{
