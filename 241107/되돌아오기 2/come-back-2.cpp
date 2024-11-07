@@ -17,11 +17,7 @@ int main() {
     int curdir = 0;
     for (int i = 0; i < cmd.length(); i++)
     {
-        if ( i != 0 && x == 0 && y == 0)
-        {
-            cout << i;
-            return 0;
-        }
+
         if (cmd[i] == 'L')
         {
             curdir = (curdir -1 +4) %4;
@@ -36,7 +32,12 @@ int main() {
             y = y + dy[curdir];
             x = x + dx[curdir];
         }
-        
+        // cout << curdir << " " << x << " " << y << "\n";
+        if ( i != 0 && x == 0 && y == 0)
+        {
+            cout << i +1;
+            return 0;
+        }
     }
 
     cout << -1;
