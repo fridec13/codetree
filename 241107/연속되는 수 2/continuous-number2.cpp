@@ -24,6 +24,10 @@ int main() {
 			arr2[j] = i;
 			j++;
 		}
+		if (i == n - 1)
+		{
+			arr2[j] = n;
+		}
 	}
 	for (int i = 1; i < 3; i++)
 	{
