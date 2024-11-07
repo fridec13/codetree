@@ -3,97 +3,85 @@
 
 using namespace std;
 
-int A[200000];
-int B[200000];
-int cur = 100000;
-int Aalldist;
-int Balldist;
+int A[500000];
+int B[500000];
+int cur = 0;
+int Aalldist = 0;
+int Balldist = 0;
+int timeflow = 0;
+int timeflowB = 0;
+int Bcur = 0;
+
 
 int main() {
-	// 여기에 코드를 작성해주세요.
-
 	int N, M;
 	cin >> N >> M;
-	int t = 0;
 
-	for (int i = 0; i < N; i++)
-	{
+	// A 배열에 경로 기록
+	for (int i = 0; i < N; i++) {
 		char dir;
 		int dist;
 		cin >> dir >> dist;
-		Aalldist = Aalldist + dist;
-		// dist = dist - 1;
-		if (dir == 'R')
-		{
-			for (int j = cur; j < cur + dist; j++)
-			{
-				A[t] = j - 100000;
-				t++;
+		Aalldist += dist;
+
+
+		if (dir == 'R') {
+			for (int j = cur; j < cur + dist; j++) {
+				A[timeflow] = j;
+				timeflow++;
 			}
-			cur = cur + dist;
+			cur += dist;
 		}
-		else if (dir == 'L')
-		{
-			for (int j = cur; j > cur - dist; j--)
-			{
-				A[t] = j - 100000;
-				t++;
+		else if (dir == 'L') {
+			for (int j = cur; j > cur - dist; j--) {
+				A[timeflow] = j;
+				timeflow++;
 			}
-			cur = cur - dist;
+			cur -= dist;
 		}
 	}
+	// cout << "A complete\n";
 
-	t = 0;
-	cur = 100000;
+	// B 배열에 경로 기록 (timeflow, cur 초기화)
 
-	for (int i = 0; i < M; i++)
-	{
+	for (int i = 0; i < M; i++) {
 		char dir;
 		int dist;
 		cin >> dir >> dist;
-		Balldist = Balldist + dist;
-		if (dir == 'R')
-		{
-			for (int j = cur; j < cur + dist; j++)
-			{
-				B[t] = j - 100000;
-				t++;
-			}
-			cur = cur + dist;
-		}
-		else if (dir == 'L')
-		{
-			for (int j = cur; j > cur - dist; j--)
-			{
-				B[t] = j - 100000;
-				t++;
-			}
-			cur = cur - dist;
-		}
+		Balldist += dist;
 
+		if (dir == 'R') {
+			for (int j = Bcur; j < Bcur + dist; j++) {
+				B[timeflowB] = j;
+				timeflowB++;
+			}
+			Bcur += dist;
+		}
+		else if (dir == 'L') {
+			for (int j = Bcur; j > Bcur - dist; j--) {
+				B[timeflowB] = j;
+				timeflowB++;
+			}
+			Bcur -= dist;
+		}
 	}
-	int flag = 0;
+	// cout << "B complete\n";
+	int maxval = max(Aalldist, Balldist);
 
-	for (int i = 0; i < max(Aalldist, Balldist); i++)
-	{
+	// cout << maxval << "\n";
+	//return 0;
+
+	// 두 배열의 동일 위치에서 처음 만나는 시간을 출력
+	for (int i = 0; i < maxval; i++) {
 		//cout << "time" << i << ":" << A[i] << " " << B[i] << "\n";
-		if (A[i] == B[i] && i != 0)
-		{
+
+		if (A[i] == B[i] && i != 0) {
 			cout << i;
 			return 0;
 		}
 	}
-	//for (int i = 0; i < 10000; i++)
-	//{
-	//    if (A[i] == B[i])
-	//    {
-	//        flag = i;
-	//        break;
-	//    }
-	//}
-	//int d = 1;
 
-	//(flag) ? cout << flag : cout << -1; 
+	// 만나는 시간이 없을 경우
 	cout << -1;
 	return 0;
 }
