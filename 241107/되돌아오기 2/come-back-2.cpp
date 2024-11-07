@@ -24,7 +24,7 @@ int main() {
         }
         if (cmd[i] == 'L')
         {
-            curdir = (curdir -1) %4;
+            curdir = (curdir -1 +4) %4;
 
         }
         else if (cmd[i] == 'R')
