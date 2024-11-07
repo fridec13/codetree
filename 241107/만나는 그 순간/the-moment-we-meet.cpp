@@ -3,9 +3,9 @@
 
 using namespace std;
 
-int A[10000];
-int B[10000];
-int cur = 5000;
+int A[100000];
+int B[100000];
+int cur = 50000;
 int Aalldist;
 int Balldist;
 
@@ -27,7 +27,7 @@ int main() {
 		{
 			for (int j = cur; j < cur + dist; j++)
 			{
-				A[t] = j - 5000;
+				A[t] = j - 50000;
 				t++;
 			}
 			cur = cur + dist;
@@ -36,7 +36,7 @@ int main() {
 		{
 			for (int j = cur; j > cur - dist; j--)
 			{
-				A[t] = j - 5000;
+				A[t] = j - 50000;
 				t++;
 			}
 			cur = cur - dist;
@@ -44,7 +44,7 @@ int main() {
 	}
 
 	t = 0;
-	cur = 5000;
+	cur = 50000;
 
 	for (int i = 0; i < M; i++)
 	{
@@ -56,7 +56,7 @@ int main() {
 		{
 			for (int j = cur; j < cur + dist; j++)
 			{
-				B[t] = j - 5000;
+				B[t] = j - 50000;
 				t++;
 			}
 			cur = cur + dist;
@@ -65,7 +65,7 @@ int main() {
 		{
 			for (int j = cur; j > cur - dist; j--)
 			{
-				B[t] = j - 5000;
+				B[t] = j - 50000;
 				t++;
 			}
 			cur = cur - dist;
