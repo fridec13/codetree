@@ -70,10 +70,10 @@ int main() {
 	}
 	int flag = 0;
 
-	for (int i = 0; i < 10000; i++)
+	for (int i = 0; i <= 1000; i++)
 	{
 		//cout << "time" << i << ":" << A[i] << " " << B[i] << "\n";
-		if (A[i] == B[i] && A[i] > 0 && B[i] > 0)
+		if (A[i] == B[i] && i != 0)
 		{
 			cout << i;
 			return 0;
