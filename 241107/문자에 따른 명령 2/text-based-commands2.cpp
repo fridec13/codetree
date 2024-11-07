@@ -2,15 +2,15 @@
 #include <string>
 using namespace std;
 
-int dy[4] = { 1, 0, -1, 0};
-int dx[4] = { 0, -1, 0, 1};
+int dx[4] = { 1, 0, -1, 0};
+int dy[4] = { 0, -1, 0, 1};
 
 int main() {
     // 여기에 코드를 작성해주세요.
     int x = 0;
     int y = 0;
 
-    int cur_dirnum = 2;
+    int cur_dirnum = 3;
 
     string command;
     cin >> command;
