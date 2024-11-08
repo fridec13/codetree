@@ -25,6 +25,8 @@ int main() {
             maxval = max(maxval, arr[i][j] + arr[i][j+1] + arr[i][j+2]);          
         }
     }
+
+    //더하려면 3중 for문을 써야하는가?
     cout << maxval;
     return 0;
 }
