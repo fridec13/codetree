@@ -18,14 +18,12 @@ int main() {
         }
     }
     int maxval = -99999999;
-    for (int i = 0; i < n-2; i++)
+    for (int i = 0; i < n; i++)
     {
-        int sum = 0;
-        for (int j = i; j < i+3; j++)
+        for (int j = 0; j < n-2; j++)
         {
-            if (arr[i][j]) sum += arr[i][j];            
+            maxval = max(maxval, arr[i][j] + arr[i][j+1] + arr[i][j+2]);          
         }
-        maxval = max(maxval, sum);
     }
     cout << maxval;
     return 0;
