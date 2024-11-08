@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <climits>
 
 using namespace std;
 int n;
@@ -21,7 +22,7 @@ int main() {
 	{
 		cin >> goal[i];
 	}
-	int minval = 999999;
+	int minval = INT_MAX;
 	int cnt = 0;
 	int dist = 0; // 전체 인원 거리
 	for (int i = 0; i < n; i++) //출발 하는 방 고르기
