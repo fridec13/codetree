@@ -21,7 +21,7 @@ int main() {
     for (int i = 0; i < n-2; i++)
     {
         int sum = 0;
-        for (int j = i; j < n+i; j++)
+        for (int j = i; j < i+3; j++)
         {
             if (arr[i][j]) sum += arr[i][j];            
         }
