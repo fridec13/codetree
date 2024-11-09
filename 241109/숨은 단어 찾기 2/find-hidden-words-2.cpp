@@ -36,9 +36,9 @@ int main() {
         {
             if (input[i][j] == 'L' )
             {
-                int curx = j;
                 int cury = i;
-                cout << curx << cury << "L\n";
+                int curx = j;
+                // cout << curx << cury << "L\n";
                 for (int k = 0; k < 8; k++)
                 {
                     int ny = cury + dy[k];
@@ -48,12 +48,12 @@ int main() {
                     if ( InRange(ny, nx) && input[ny][nx] == 'E')
                     {
 
-                        cury = ny;
-                        curx = nx;
+                        int cury1 = ny;
+                        int curx1 = nx;
                         // cout << ny << nx << "dir" << k << "L\n";
                         // cout << cury << "\n";
-                        ny = cury + dy[k];
-                        nx = curx + dx[k];
+                        ny = cury1 + dy[k];
+                        nx = curx1 + dx[k];
                         // cout << dx[k] << "\n";
 
                         // cout << ny << nx << "E1\n";
