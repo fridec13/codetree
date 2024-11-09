@@ -38,19 +38,28 @@ int main() {
             {
                 int curx = j;
                 int cury = i;
+                cout << curx << cury << "L\n";
                 for (int k = 0; k < 8; k++)
                 {
                     int ny = cury + dy[k];
                     int nx = curx + dx[k];
+                    // cout << ny << nx << "\n";
 
                     if ( InRange(ny, nx) && input[ny][nx] == 'E')
                     {
-                        curx = ny;
-                        cury = nx;
+
+                        cury = ny;
+                        curx = nx;
+                        // cout << ny << nx << "dir" << k << "L\n";
+                        // cout << cury << "\n";
                         ny = cury + dy[k];
                         nx = curx + dx[k];
+                        // cout << dx[k] << "\n";
+
+                        // cout << ny << nx << "E1\n";
                         if (InRange(ny, nx) && input[ny][nx] == 'E')
                         {
+                            // cout << ny << nx << "E2\n";
                             cnt++;
                         }
                     }
