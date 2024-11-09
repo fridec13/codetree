@@ -7,7 +7,7 @@ using namespace std;
 int arr[19][19];
 
 bool InRange(int i, int j ){
-    return (0 <= i && i < 19 && 0 <= j && j < 0);
+    return (0 <= i && i < 19 && 0 <= j && j < 19);
 }
 
 
@@ -56,8 +56,11 @@ int main() {
                 //대각선은 좌상 우하, 우상 좌하 두가지로 구성된다.
                 //현재 있는 곳에서 행과 열을 + 1을 해주면 아래로 내려간다.
                 //탐색 위치가 벗어나면 안되므로 레인지 함수를 활용한다.
+                // if ( i == 2 && j == 2 ) cout << arr[i][j] << "\n" << InRange(i+4, j+4) << "\n";
+                
 
-                if ( InRange(i+4,j+4) && arr[i][j] == 1 && arr[i+1][j+1] == 1 &&  arr[i+2][j+2] == 1&&  arr[i+3][j+3] == 1 && arr[i+4][j+4] == 1) //행을 먼저 고정하고, 우하단으로 탐색한다. 
+
+                else if ( InRange(i+4,j+4) && arr[i][j] == 1 && arr[i+1][j+1] == 1 &&  arr[i+2][j+2] == 1&&  arr[i+3][j+3] == 1 && arr[i+4][j+4] == 1) //행을 먼저 고정하고, 우하단으로 탐색한다. 
                 {
                     cout << 1 << "\n" << i+2 + 1 << " " << j+2 +1;
                     return 0;
