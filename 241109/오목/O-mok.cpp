@@ -81,24 +81,24 @@ int main() {
                     return 0;
                 }
 
-                if ( InRange(i-4,j-4) && arr[i][j] == 1 && arr[i-1][j-1] == 1 && arr[i-2][j-2] == 1 && arr[i-3][j-3] == 1 && arr[i-4][j-4] == 1) //행을 먼저 고정하고, 우하단으로 탐색한다. 
+                if ( InRange(i+4,j-4) && arr[i][j] == 1 && arr[i+1][j-1] == 1 && arr[i+2][j-2] == 1 && arr[i+3][j-3] == 1 && arr[i+4][j-4] == 1) //행을 먼저 고정하고, 우하단으로 탐색한다. 
                 {
-                    cout << 1 << "\n" << i-2 + 1 << " " << j-2 +1;
+                    cout << 1 << "\n" << i+2 + 1 << " " << j-2 +1;
                     return 0;
                 }
-                else if (InRange(i-4, j-4) && arr[j][i] == 1 && arr[j-1][i-1] == 1 && arr[j-2][i-2] == 1 && arr[j-3][i-3] == 1 && arr[j-4][i-4] == 1)
+                else if (InRange(i+4, j-4) && arr[j][i] == 1 && arr[j-1][i+1] == 1 && arr[j-2][i+2] == 1 && arr[j-3][i+3] == 1 && arr[j-4][i+4] == 1)
                 {
-                    cout << 1 << "\n" << j + 2 + 1 << " " << i-2 + 1;
+                    cout << 1 << "\n" << j + 2 + 1 << " " << i+2 + 1;
                     return 0;
                 }
-                else if ( InRange(i-4,j-4) && arr[i][j] == 2 && arr[i-1][j-1] == 2 && arr[i-2][j-2] == 2 && arr[i-3][j-3] == 2 && arr[i-4][j-4] == 2) //행을 먼저 고정하고, 우하단으로 탐색한다. 
+                else if ( InRange(i+4,j-4) && arr[i][j] == 2 && arr[i+1][j-1] == 2 && arr[i+2][j-2] == 2 && arr[i+3][j-3] == 2 && arr[i+4][j-4] == 2) //행을 먼저 고정하고, 우하단으로 탐색한다. 
                 {
-                    cout << 2 << "\n" << i-2 + 1 << " " << j-2 +1;
+                    cout << 2 << "\n" << i+2 + 1 << " " << j-2 +1;
                     return 0;
                 }
-                else if (InRange(i-4, j-4) && arr[j][i] == 2 &&  arr[j-1][i-1] == 2 &&  arr[j-2][i-2] == 2 && arr[j-3][i-3] == 2 && arr[j-4][i-4] == 2)
+                else if (InRange(i+4, j-4) && arr[j][i] == 2 &&  arr[j-1][i+1] == 2 &&  arr[j-2][i+2] == 2 && arr[j-3][i+3] == 2 && arr[j-4][i+4] == 2)
                 {
-                    cout << 2 << "\n" << j + 2 + 1 << " " << i-2 + 1;
+                    cout << 2 << "\n" << j + 2 + 1 << " " << i+2 + 1;
                     return 0;
                 }
 
