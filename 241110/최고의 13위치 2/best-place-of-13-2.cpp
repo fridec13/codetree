@@ -35,7 +35,7 @@ int main() {
 
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j <n; j++)
+        for (int j = 0; j <n-3; j++)
         {
             sum1[i][j] = arr[i][j] + arr[i][j+1] + arr[i][j+2];
         }
@@ -56,7 +56,7 @@ int main() {
                 {
                     for (int l = j+3; l < n-2; j++) //l은 j+3부터 n-2까지 돌고
                     {
-                        int sum =  sum1[i][j] + arr[k][l] + arr[k][l+1] + arr[k][l+2];
+                        int sum =  sum1[i][j] + sum1[k][l];
                         if (sum == 0) continue;
                         maxval = max(maxval, sum);
                     }
@@ -65,7 +65,7 @@ int main() {
                 {
                     for (int l = 0; l < n-2; l++) //전체를 다돌아서 골라야함.
                     {
-                        int sum = sum1[i][j] + arr[k][l] + arr[k][l+1] + arr[k][l+2];
+                        int sum = sum1[i][j] + sum1[k][l];
                         if (sum == 0) continue;
 
                         maxval = max(maxval, sum);
