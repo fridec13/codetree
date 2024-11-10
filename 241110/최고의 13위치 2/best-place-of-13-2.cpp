@@ -40,6 +40,7 @@ int main() {
                     for (int l = j+3; l < n-2; j++) //l은 j+3부터 n-2까지 돌고
                     {
                         int sum = arr[i][j] + arr[i][j+1] + arr[i][j+2] + arr[k][l] + arr[k][l+1] + arr[k][l+2];
+                        if (sum == 0) continue;
                         maxval = max(maxval, sum);
                     }
                 }
@@ -48,6 +49,8 @@ int main() {
                     for (int l = 0; l < n-2; l++) //전체를 다돌아서 골라야함.
                     {
                         int sum = arr[i][j] + arr[i][j+1] + arr[i][j+2] + arr[k][l] + arr[k][l+1] + arr[k][l+2];
+                        if (sum == 0) continue;
+
                         maxval = max(maxval, sum);
                     }
                 }
