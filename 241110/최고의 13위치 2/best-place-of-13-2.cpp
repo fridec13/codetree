@@ -5,6 +5,8 @@
 using namespace std;
 int n;
 int arr[20][20];
+int sum1[20][20];
+
 
 bool InRange(int y, int x)
 {
@@ -31,11 +33,18 @@ int main() {
     }
     int maxval = INT_MIN;
 
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j <n; j++)
+        {
+            sum1[i][j] = arr[i][j] + arr[i][j+1] + arr[i][j+2];
+        }
+    }
+
     for (int i = 0; i < n; i++) //행을 하나 선택
     {
         for (int j = 0; j < n-2; j++) // 열하나 선택 // 첫번째 1*3 선택
         {
-            int sum1 = arr[i][j] + arr[i][j+1] + arr[i][j+2];
             // 만약 x길이가 3이라면 n이 5일때 탐색은 0,1,2 1,2,3 2,3,4까지 가능.
             // 0, 1 ,2 까지 돎.
             // x 길이가 3인데 n이 6이면 0, 1,2,3까지 돌음. 
@@ -47,7 +56,7 @@ int main() {
                 {
                     for (int l = j+3; l < n-2; j++) //l은 j+3부터 n-2까지 돌고
                     {
-                        int sum =  sum1 + arr[k][l] + arr[k][l+1] + arr[k][l+2];
+                        int sum =  sum1[i][j] + arr[k][l] + arr[k][l+1] + arr[k][l+2];
                         if (sum == 0) continue;
                         maxval = max(maxval, sum);
                     }
@@ -56,7 +65,7 @@ int main() {
                 {
                     for (int l = 0; l < n-2; l++) //전체를 다돌아서 골라야함.
                     {
-                        int sum = sum1 + arr[k][l] + arr[k][l+1] + arr[k][l+2];
+                        int sum = sum1[i][j] + arr[k][l] + arr[k][l+1] + arr[k][l+2];
                         if (sum == 0) continue;
 
                         maxval = max(maxval, sum);
