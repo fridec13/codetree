@@ -4,7 +4,7 @@
 using namespace std;
 
 
-int A[100];
+int A[20000];
 
 
 int main() {
@@ -21,13 +21,13 @@ int main() {
 
 	int maxval = 0;
 	// k == 2 0, 1, 2 부터 탐색해야함. 2가 centor 3 4
-	for (int i = k; i <= 200; i++)
+	for (int i = k; i <= 20000; i++)
 	{
 		int flag = 0;
 		int sum = 0;
 		for (int j = i - k; j <= i + k; j++)
 		{
-			if (i + k > 200)
+			if (i + k > 20000)
 			{
 				flag = 1;
 				break;
