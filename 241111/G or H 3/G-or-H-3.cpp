@@ -20,7 +20,7 @@ int main() {
 
     int maxval = -1;
 
-    for (int i = 1; i <= n-k+1; i++)
+    for (int i = 1; i <= 10000-k+1; i++)
     {
         int sum= 0;
         for (int j = i; j <= i+k; j++)
