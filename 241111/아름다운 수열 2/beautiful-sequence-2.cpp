@@ -20,18 +20,19 @@ int main() {
         cin >> B[i];
     }
     int cnt = 0;
-    for (int i = 0; i < n; i++) // A의 시작점 선택
+    for (int i = 0; i <= n-m; i++) // A의 시작점 선택
     {
-        int check[100]= {};
+        int check[100]= {0};
         int flag = 0;
         for (int j = i; j < i+m; j++) // j는 시작점 부터 +m까지 확인.
         {
             // 확인할 숫자 하나.
             for (int k = 0; k < m; k++)
             {
-                if (A[j] == B[k])
+                if (check[k] == 1) continue; 
+                if (A[j] == B[k] ) // 고른 숫자가 B[0]과 같다면 0을 1로 바꿈, 다음으로 고른 숫자가 B[2] 와 같다면 check[2] = 1로 바꿈.
                 {
-                    check[k]++;
+                    check[k]++;// 다시 생각해야함.
                 }
             }
         }
