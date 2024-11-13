@@ -44,18 +44,18 @@ int main() {
 
     for (int i =1; i <= m; i++) // 상한 치즈는 단하나임.
     {
+        bool flag  = true;
         for (int j = 1; j <= n; j++)
         {
             if (Cheeselist[i].peoplelist[j].eattime == 0 ) continue;
 
-            else if (Cheeselist[i].peoplelist[j].eattime > 0)
+            else if (Cheeselist[i].peoplelist[j].eattime > 0 && Cheeselist[i].peoplelist[j].illtime > 0)
             {
                 if (Cheeselist[i].peoplelist[j].eattime >= Cheeselist[i].peoplelist[j].illtime)
                 {
-                    Cheeselist[i].mayberotten = false;
                     continue;
                 }
-                else if (Cheeselist[i].peoplelist[j].illtime == Cheeselist[i].peoplelist[j].eattime + 1)
+                else if (Cheeselist[i].peoplelist[j].illtime >= Cheeselist[i].peoplelist[j].eattime)
                 {
                     Cheeselist[i].mayberotten = true;
                 }
@@ -65,17 +65,31 @@ int main() {
     int cntcheese[51] = {};
     for (int i = 1; i <= m; i++)
     {
-        if (Cheeselist[i].mayberotten == true)
+        // if ( i == 1)
+        // {
+        //     for (int j = 1; j <= n; j++)
+        //     {
+        //         if ( Cheeselist[i].peoplelist[j].eattime > 0)
+        //         {
+        //             cout << i << " " << j << "\n";
+        //         }
+        //     }
+        // }
+        if (Cheeselist[i].mayberotten)
         {
             for (int j = 1; j <= n; j++)
             {
                 if ( Cheeselist[i].peoplelist[j].eattime > 0)
                 {
+                    // cout << i << j << " ";
                     cntcheese[i]++;
                 }
             }
         }
     }
+
+
+    // cout << "\n";
     int maxcnt = 0;
     for (int i =1; i <= m; i++)
     {
