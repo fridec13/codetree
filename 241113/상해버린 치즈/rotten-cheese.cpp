@@ -7,7 +7,6 @@ struct People
     int illtime;
 };
 
-
 struct Cheese
 {
     People peoplelist[100];
@@ -17,8 +16,6 @@ struct Cheese
 Cheese Cheeselist[51];
 
 int checkill[51];
-
-
 
 int main() {
     // 여기에 코드를 작성해주세요.
@@ -45,47 +42,47 @@ int main() {
         }
     }
 
-    for (int i =1; i <= m; i++) // 만약 i치즈가 상한치즈라면,
+    for (int i =1; i <= m; i++) // 상한 치즈는 단하나임.
     {
         for (int j = 1; j <= n; j++)
         {
             if (Cheeselist[i].peoplelist[j].eattime == 0 ) continue;
-            if (Cheeselist[i].peoplelist[j].eattime >= Cheeselist[i].peoplelist[j].illtime) continue;
 
-            if (Cheeselist[i].peoplelist[j].eattime > 0)
+            else if (Cheeselist[i].peoplelist[j].eattime > 0)
             {
-                if (Cheeselist[i].peoplelist[j].illtime == Cheeselist[i].peoplelist[j].eattime + 1)
+                if (Cheeselist[i].peoplelist[j].eattime >= Cheeselist[i].peoplelist[j].illtime)
+                {
+                    Cheeselist[i].mayberotten = false;
+                    continue;
+                }
+                else if (Cheeselist[i].peoplelist[j].illtime == Cheeselist[i].peoplelist[j].eattime + 1)
                 {
                     Cheeselist[i].mayberotten = true;
                 }
             }
         }
     }
-
+    int cntcheese[51] = {};
     for (int i = 1; i <= m; i++)
     {
-        if (Cheeselist[i].mayberotten = true)
+        if (Cheeselist[i].mayberotten == true)
         {
             for (int j = 1; j <= n; j++)
             {
                 if ( Cheeselist[i].peoplelist[j].eattime > 0)
                 {
-                    checkill[j] = 1;
+                    cntcheese[i]++;
                 }
             }
         }
     }
-
-    int cnt = 0;
-    for (int i = 1; i <= n; i++)
+    int maxcnt = 0;
+    for (int i =1; i <= m; i++)
     {
-        if (checkill[i] == 1)
-        {
-            cnt++;
-        }
+        maxcnt = max(maxcnt, cntcheese[i]);
     }
 
-    cout << cnt;
+    cout << maxcnt;
     
     return 0;
 }
