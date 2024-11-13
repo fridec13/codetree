@@ -62,20 +62,25 @@ int main() {
             if (jflag == 1) continue; // 더 봐봐야 의미가 없음.
             int segsum = 0;
             int cnt = 0;
-            //구간 마지막이 변하면 segsum은 변한다
+            // 구간 마지막이 변하면 segsum은 변한다
             for (int k = i; k <= j; k++)
             {
                 segsum += arr[k];
-                if (segsum > b) 
-                {
-                    jflag = 1;
-                    break;
-                }
+                // if (segsum > b) 
+                // {
+                //     jflag = 1;
+                //     break;
+                // }
 
                 if (k == j)
                 {
                     int last = arr[k]/2;
                     segsum = segsum - arr[k] + last;
+                    if (segsum > b)
+                    {
+                        jflag = 1;
+                        break;
+                    }
                     if (segsum <= b)
                     {
                         cnt++;
