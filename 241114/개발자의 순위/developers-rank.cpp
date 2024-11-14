@@ -14,6 +14,7 @@ int arr[21][21];
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> k >> n;
+    int cnt = 0;
 
     for (int i = 0; i < k; i++)
     {
@@ -23,6 +24,16 @@ int main() {
         }
     }
 
+    if (n == 1)
+    {
+        for (int i = 1; i < n; i++)
+        {
+            cnt += i;
+        }
+    }
+
+    else
+    {
     for (int i = 0; i < k; i++)
     {
         for (int j = 1; j <= n; j++) // 1등 고르고
@@ -55,7 +66,7 @@ int main() {
         }
 
     }
-    int cnt = 0;
+    }
     for (int i = 0; i < k; i++)
     {
         for (int j = 1; j <= n; j++)
