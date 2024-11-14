@@ -24,7 +24,7 @@ int main() {
         }
     }
 
-    if (n == 1)
+    if (k == 1)
     {
         for (int i = 1; i < n; i++)
         {
