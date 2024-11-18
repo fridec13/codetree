@@ -9,6 +9,7 @@ int n;
 //최대명수 출력
 struct Student
 {
+    int num;
     int price;
     int sentpee;
 };
@@ -28,6 +29,7 @@ int main() {
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i].price >> arr[i].sentpee;
+        arr[i].num = i;
         allsum = allsum + arr[i].price + arr[i].sentpee;
     }
 
@@ -41,6 +43,7 @@ int main() {
 
     for (int i = 0; i < n; i++) // 할인 제품 고르기
     {
+        int temp = arr[i].price;
         arr[i].price = arr[i].price / 2;
         int sum = 0;
         int cnt = 0;
@@ -52,7 +55,13 @@ int main() {
             cnt++;
         }
         maxval = max(cnt, maxval);
-        arr[i].price = arr[i].price * 2;        
+        for (int j =0; j < n; j++)
+        {
+            if (arr[j].num == i)
+            {
+                arr[j].price = temp;
+            }
+        }     
     }
 
     cout << maxval;
