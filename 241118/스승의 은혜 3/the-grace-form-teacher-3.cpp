@@ -31,8 +31,6 @@ int main() {
         allsum = allsum + arr[i].price + arr[i].sentpee;
     }
 
-    sort(arr, arr+n, cmp);
-
     if (b >= allsum)
     {
         cout << n;
@@ -46,6 +44,7 @@ int main() {
         arr[i].price = arr[i].price / 2;
         int sum = 0;
         int cnt = 0;
+        sort(arr, arr+n, cmp);
         for (int j = 0; j < n; j++) // 확인
         {
             sum = sum + arr[j].price + arr[j].sentpee;
@@ -53,8 +52,7 @@ int main() {
             cnt++;
         }
         maxval = max(cnt, maxval);
-        arr[i].price = arr[i].price * 2;
-        
+        arr[i].price = arr[i].price * 2;        
     }
 
     cout << maxval;
