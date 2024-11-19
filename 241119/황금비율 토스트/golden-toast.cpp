@@ -24,6 +24,7 @@ int main() {
         cin >> cmd;
         if (cmd == 'L')
         {
+            if (it != l.begin())
             it--;
         }
         if (cmd == 'P')
@@ -34,10 +35,12 @@ int main() {
         }
         if (cmd == 'R')
         {
+            if (it != l.end())
             it++;
         }
         if (cmd == 'D')
         {
+            if (it != l.end())
             it = l.erase(it);
         }
 
